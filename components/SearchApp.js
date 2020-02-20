@@ -47,7 +47,10 @@ class SearchApp extends React.Component {
         <div className="jumbotron">
           <h1 className="text-center">Tunes Search</h1>
           <p className="lead text-center">Search for a song.</p>
-          <SearchForm onSearch={this.search} />
+          <div className="container">
+            { this.state.isLoading?`Loading...` : `${this.state.results.length} results found` }
+            <SearchForm onSearch={this.search} />
+          </div>
         </div>
 
         <ul className="media-list">
