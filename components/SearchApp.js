@@ -48,7 +48,9 @@ class SearchApp extends React.Component {
           <h1 className="text-center">Tunes Search</h1>
           <p className="lead text-center">Search for a song.</p>
           <div className="container">
-            { this.state.isLoading?`Loading...` : `${this.state.results.length} results found` }
+            { this.state.isLoading?
+              `Loading...`:
+              `${this.state.results.length} results found` }
             <SearchForm onSearch={this.search} />
           </div>
         </div>
