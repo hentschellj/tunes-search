@@ -5,11 +5,29 @@ class SearchApp extends React.Component {
   constructor() {
     super();
 
+    this.state = {
+      isLoading: false,
+      results: []
+    }
+
     this.search = this.search.bind(this)
   }
 
   search(text) {
-    console.log(text)
+    fetch(`https://itunes.apple.com/search?term=${text}&entity=song`)
+      .then((response) => {
+        if (response.status >= 200 && response.status < 300) {
+          return response.json()
+        } else {
+          throw new Error()
+        }
+      })
+      .then((json) => {
+        console.log(json)
+        this.setState({
+          results: json.results
+        })
+      })
   }
 
   render() {
