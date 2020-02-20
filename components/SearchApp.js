@@ -15,10 +15,11 @@ class SearchApp extends React.Component {
   }
 
   search(text) {
+    const mergedText = text.replace(/ /g, '+')
     this.setState({
       isLoading: true
     })
-    fetch(`https://itunes.apple.com/search?term=${text}&entity=song`)
+    fetch(`https://itunes.apple.com/search?term=${mergedText}&entity=song`)
       .then((response) => {
         if (response.status >= 200 && response.status < 300) {
           return response.json()
