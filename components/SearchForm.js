@@ -21,7 +21,6 @@ class SearchForm extends React.Component {
     return (
       <div>
         <form className="input-group input-group-lg">
-          {this.state.text}
           <input className="form-control" type="text" onChange={this.updateText} value={this.state.text} />
           <span className="input-group-btn">
             <input className="btn btn-default" type="button" value="Search" />
