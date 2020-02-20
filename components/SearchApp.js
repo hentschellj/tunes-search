@@ -14,6 +14,9 @@ class SearchApp extends React.Component {
   }
 
   search(text) {
+    this.setState({
+      isLoading: true
+    })
     fetch(`https://itunes.apple.com/search?term=${text}&entity=song`)
       .then((response) => {
         if (response.status >= 200 && response.status < 300) {
@@ -30,6 +33,11 @@ class SearchApp extends React.Component {
       })
       .catch((err) => {
         console.log(err)
+      })
+      .then(() => {
+        this.setState({
+          isLoading: false
+        })
       })
   }
 
