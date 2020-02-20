@@ -17,7 +17,8 @@ class SearchApp extends React.Component {
   search(text) {
     const mergedText = text.replace(/ /g, '+')
     this.setState({
-      isLoading: true
+      isLoading: true,
+      results: []
     })
     fetch(`https://itunes.apple.com/search?term=${mergedText}&entity=song`)
       .then((response) => {
