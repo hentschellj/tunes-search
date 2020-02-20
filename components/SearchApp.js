@@ -57,9 +57,13 @@ class SearchApp extends React.Component {
           </div>
         </div>
 
-        <ul className="media-list">
-          
-        </ul>
+        <div className="container">
+          <ul className="media-list">
+            {this.state.results.map((item, index) => {
+              return <SearchResult key={index} item={item} />
+            })}
+          </ul>
+        </div>
       </div>
     )
   }
