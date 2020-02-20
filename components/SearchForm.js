@@ -23,7 +23,12 @@ class SearchForm extends React.Component {
         <form className="input-group input-group-lg">
           <input className="form-control" type="text" onChange={this.updateText} value={this.state.text} />
           <span className="input-group-btn">
-            <input className="btn btn-default" type="button" value="Search" />
+            <input className="btn btn-default" type="submit" value="Search"
+              onClick={(e) => {
+                e.preventDefault();
+                this.props.onSearch(this.state.text)
+              }}
+            />
           </span>
         </form>
       </div>
