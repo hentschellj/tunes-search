@@ -28,6 +28,9 @@ class SearchApp extends React.Component {
           results: json.results
         })
       })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
   render() {
