@@ -8,7 +8,14 @@ class SearchApp extends React.Component {
   render() {
     return (
       <div>
-        Search App
+        <div className="jumbotron">
+          <h1 className="text-center">Tunes Search</h1>
+          <p className="lead text-center">Search for a song.</p>
+        </div>
+
+        <ul className="media-list">
+          
+        </ul>
       </div>
     )
   }
